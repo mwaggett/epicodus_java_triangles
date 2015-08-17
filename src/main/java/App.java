@@ -26,13 +26,13 @@ public class App {
       model.put("template", "templates/newpage.vtl");
 
       int sideA = Integer.parseInt(request.queryParams("userSideA"));
-      model.put("sideA", sideA);
+      // model.put("sideA", sideA);
 
       int sideB = Integer.parseInt(request.queryParams("userSideB"));
-      model.put("sideB", sideB);
+      // model.put("sideB", sideB);
 
       int sideC = Integer.parseInt(request.queryParams("userSideC"));
-      model.put("sideC", sideC);
+      // model.put("sideC", sideC);
 
       Triangle userTriangle = new Triangle(sideA, sideB, sideC);
 

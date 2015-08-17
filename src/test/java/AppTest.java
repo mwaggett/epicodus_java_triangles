@@ -14,33 +14,54 @@ public class AppTest extends FluentTest {
   public WebDriver getDefaultDriver() {
       return webDriver;
   }
-  /*
+
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-
-  ~~UNIT TESTING~~
-  @Test
-  public void methodName_whatIsBeingTested_desiredResult() {
-    App a = new App();
-    <Class> expValue = x;
-    assertEquals(expValue, a.methodName(param));
-  }
-
-  ~~INTEGRATION TESTING~~
+  // ~~INTEGRATION TESTING~~
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Something");
+    assertThat(pageSource()).contains("Input three lengths");
   }
 
   @Test
-  public void newPage_desiredResult() {
-    goTo("starting_page_url");
-    fill("#input_id").with("input");
+  public void newPage_equilateral() {
+    goTo("http://localhost:4567/");
+    fill("#userSideA").with("4");
+    fill("#userSideB").with("4");
+    fill("#userSideC").with("4");
     submit(".btn");
-    assertThat(pageSource()).contains("Some result of input");
+    assertThat(pageSource()).contains("equilateral");
   }
-  */
 
+  @Test
+  public void newPage_isosceles() {
+    goTo("http://localhost:4567/");
+    fill("#userSideA").with("5");
+    fill("#userSideB").with("5");
+    fill("#userSideC").with("7");
+    submit(".btn");
+    assertThat(pageSource()).contains("isosceles");
+  }
+
+  @Test
+  public void newPage_scalene() {
+    goTo("http://localhost:4567/");
+    fill("#userSideA").with("3");
+    fill("#userSideB").with("4");
+    fill("#userSideC").with("5");
+    submit(".btn");
+    assertThat(pageSource()).contains("scalene");
+  }
+
+  @Test
+  public void newPage_notTriangle() {
+    goTo("http://localhost:4567/");
+    fill("#userSideA").with("2");
+    fill("#userSideB").with("2");
+    fill("#userSideC").with("8");
+    submit(".btn");
+    assertThat(pageSource()).contains("not a triangle");
+  }
 }
