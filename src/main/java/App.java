@@ -25,28 +25,28 @@ public class App {
       HashMap model = new HashMap();
       model.put("template", "templates/newpage.vtl");
 
-      int sideA = Integer.parseInt(request.queryParams("userSideA"));
-      // model.put("sideA", sideA);
+      try {
+        int sideA = Integer.parseInt(request.queryParams("userSideA"));
+        // model.put("sideA", sideA);
 
-      int sideB = Integer.parseInt(request.queryParams("userSideB"));
-      // model.put("sideB", sideB);
+        int sideB = Integer.parseInt(request.queryParams("userSideB"));
+        // model.put("sideB", sideB);
 
-      int sideC = Integer.parseInt(request.queryParams("userSideC"));
-      // model.put("sideC", sideC);
+        int sideC = Integer.parseInt(request.queryParams("userSideC"));
+        // model.put("sideC", sideC);
 
-      Triangle userTriangle = new Triangle(sideA, sideB, sideC);
+        Triangle userTriangle = new Triangle(sideA, sideB, sideC);
 
-      String typeOfTriangle = userTriangle.whatKindOfTriangle();
+        String typeOfTriangle = userTriangle.whatKindOfTriangle();
 
-      model.put("typeOfTriangle", typeOfTriangle);
+        model.put("typeOfTriangle", typeOfTriangle);
 
+      } catch(NumberFormatException e) {
+        String typeOfTriangle = "Those aren't numbers, try again.";
+        model.put("typeOfTriangle", typeOfTriangle);
+       }
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
-
-  // public static <OutputClass> methodName(<Class> arg) {
-  //
-  // }
-
 
 }

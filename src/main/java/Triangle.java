@@ -28,7 +28,11 @@ public class Triangle {
   }
 
   public boolean isEquilateralTriangle() {
-    return ((mSideA == mSideB) && (mSideB == mSideC));
+    if (isTriangle()) {
+      return ((mSideA == mSideB) && (mSideB == mSideC));
+    } else {
+      return false;
+    }
   }
 
   public boolean isIsoscelesTriangle() {

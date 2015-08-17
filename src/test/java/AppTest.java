@@ -64,4 +64,14 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("not a triangle");
   }
+
+  @Test
+  public void newPage_notNumbers() {
+    goTo("http://localhost:4567/");
+    fill("#userSideA").with("a");
+    fill("#userSideB").with("b");
+    fill("#userSideC").with("c");
+    submit(".btn");
+    assertThat(pageSource()).contains("try again");
+  }
 }

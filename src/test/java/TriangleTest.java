@@ -34,6 +34,12 @@ public class TriangleTest {
   }
 
   @Test
+  public void isEquilateralTriangle_whenSidesAreZero_false() {
+    Triangle testTriangle = new Triangle(0, 0, 0);
+    assertEquals(false, testTriangle.isEquilateralTriangle());
+  }
+
+  @Test
   public void isIsoscelesTriangle_whenTwoSidesEqual_true() {
     Triangle testTriangle = new Triangle(3, 3, 5);
     assertEquals(true, testTriangle.isIsoscelesTriangle());
@@ -98,4 +104,7 @@ public class TriangleTest {
     Triangle testTriangle = new Triangle(2, 2, 8);
     assertEquals("That is not a triangle!", testTriangle.whatKindOfTriangle());
   }
+
+
+
 }
