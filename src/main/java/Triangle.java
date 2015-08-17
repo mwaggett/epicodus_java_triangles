@@ -56,5 +56,17 @@ public class Triangle {
     }
   }
 
+  public String whatKindOfTriangle() {
+    if (isEquilateralTriangle()) {
+      return "Your triangle is equilateral!";
+    } else if (isIsoscelesTriangle()) {
+      return "Your triangle is isosceles!";
+    } else if (isScaleneTriangle()) {
+      return "Your triangle is scalene!";
+    } else {
+      return "That is not a triangle!";
+    }
+  }
+
 
 }

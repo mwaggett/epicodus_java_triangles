@@ -8,7 +8,7 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import java.util.Map;
 
-/*
+
 public class App {
 
   public static void main(String[] args) {
@@ -25,19 +25,28 @@ public class App {
       HashMap model = new HashMap();
       model.put("template", "templates/newpage.vtl");
 
-      <Class> param = request.queryParams("param");
-      model.put("param", param);
-      <Class> result = someMethod(param);
-      model.put("result", result);
+      int sideA = Integer.parseInt(request.queryParams("userSideA"));
+      model.put("sideA", sideA);
+
+      int sideB = Integer.parseInt(request.queryParams("userSideB"));
+      model.put("sideB", sideB);
+
+      int sideC = Integer.parseInt(request.queryParams("userSideC"));
+      model.put("sideC", sideC);
+
+      Triangle userTriangle = new Triangle(sideA, sideB, sideC);
+
+      String typeOfTriangle = userTriangle.whatKindOfTriangle();
+
+      model.put("typeOfTriangle", typeOfTriangle);
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static <OutputClass> methodName(<Class> arg) {
-
-  }
+  // public static <OutputClass> methodName(<Class> arg) {
+  //
+  // }
 
 
 }
-*/

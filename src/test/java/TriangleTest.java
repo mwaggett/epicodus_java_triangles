@@ -75,4 +75,27 @@ public class TriangleTest {
     assertEquals(false, testTriangle.isScaleneTriangle());
   }
 
+  @Test
+  public void whatKindOfTriangle_equilateral() {
+    Triangle testTriangle = new Triangle(4, 4, 4);
+    assertEquals("Your triangle is equilateral!", testTriangle.whatKindOfTriangle());
+  }
+
+  @Test
+  public void whatKindOfTriangle_isosceles() {
+    Triangle testTriangle = new Triangle(5, 5, 7);
+    assertEquals("Your triangle is isosceles!", testTriangle.whatKindOfTriangle());
+  }
+
+  @Test
+  public void whatKindOfTriangle_scalene() {
+    Triangle testTriangle = new Triangle(3, 4, 5);
+    assertEquals("Your triangle is scalene!", testTriangle.whatKindOfTriangle());
+  }
+
+  @Test
+  public void whatKindOfTriangle_notTriangle() {
+    Triangle testTriangle = new Triangle(2, 2, 8);
+    assertEquals("That is not a triangle!", testTriangle.whatKindOfTriangle());
+  }
 }
