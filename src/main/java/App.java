@@ -8,10 +8,11 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import java.util.Map;
 
+/*
 public class App {
 
   public static void main(String[] args) {
-    /*
+
     String layout = "templates/layout.vtl";
 
     get("/", (request, response) -> {
@@ -37,5 +38,6 @@ public class App {
 
   }
 
-  */
+
 }
+*/

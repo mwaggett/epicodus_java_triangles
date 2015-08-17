@@ -14,11 +14,11 @@ public class AppTest extends FluentTest {
   public WebDriver getDefaultDriver() {
       return webDriver;
   }
-
+  /*
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  /*
+
   ~~UNIT TESTING~~
   @Test
   public void methodName_whatIsBeingTested_desiredResult() {
@@ -42,5 +42,5 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Some result of input");
   }
   */
-  
+
 }
