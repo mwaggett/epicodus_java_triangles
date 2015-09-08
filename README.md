@@ -13,7 +13,9 @@ Create a Triangle class that includes methods for initializing new triangles and
 * Clone this repository.
 * Using the command line, navigate to the top level of the cloned directory.
 * Make sure you have gradle installed. Then run the following command in your terminal:
-* _gradle run_
+```
+gradle run
+```
 * Go to localhost:4567.
 * Triangle Garbage!
 
